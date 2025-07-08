@@ -4,114 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Hansh Raj | Data Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
-
-    .top-bar {
-      position: sticky; top: 0; z-index: 1001;
-      background: #6a1b9a; color: white;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 20px;
-    }
+    .top-bar { position: sticky; top: 0; z-index: 1001; background: #6a1b9a; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
     .top-bar a { color: white; text-decoration: none; margin-left: 5px; }
     .icons i { margin-left: 15px; color: white; font-size: 1.2rem; }
-
-    .navbar {
-      position: sticky; top: 40px; z-index: 1000;
-      background-color: #6a1b9a; color: white;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 20px;
-    }
+    .navbar { position: sticky; top: 40px; z-index: 1000; background-color: #6a1b9a; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
     .navbar .logo { font-size: 1.5rem; font-weight: bold; }
-    .navbar ul {
-      list-style: none; display: flex; gap: 20px;
-    }
-    .navbar a {
-      color: white; text-decoration: none;
-      font-weight: 500; border-bottom: 2px solid transparent;
-      transition: 0.3s;
-    }
-    .navbar a:hover, .navbar a.active {
-      border-bottom: 2px solid white;
-    }
-    .menu-toggle {
-      display: none; background: none; border: none;
-      font-size: 1.8rem; color: white; cursor: pointer;
-    }
-
+    .navbar ul { list-style: none; display: flex; gap: 20px; }
+    .navbar a { color: white; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: 0.3s; }
+    .navbar a:hover, .navbar a.active { border-bottom: 2px solid white; }
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: white; cursor: pointer; }
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
-      .navbar ul {
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background: #6a1b9a; flex-direction: column; align-items: flex-start;
-        padding: 20px; transform: translateY(-20px); opacity: 0; visibility: hidden;
-        transition: all 0.3s ease;
-      }
-      .navbar ul.show {
-        transform: translateY(0); opacity: 1; visibility: visible;
-      }
+      .navbar ul { position: absolute; top: 100%; left: 0; width: 100%; background: #6a1b9a; flex-direction: column; align-items: flex-start; padding: 20px; transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+      .navbar ul.show { display: flex; transform: translateY(0); opacity: 1; visibility: visible; }
     }
-
-    .hero-banner {
-      background: linear-gradient(180deg, #6a1b9a, #4a148c);
-      color: white;
-      text-align: center;
-      padding: 60px 20px 40px;
-    }
-    .hero-img {
-      width: 140px; height: 140px; border-radius: 50%;
-      object-fit: cover; border: 4px solid white;
-      margin: 20px auto; display: block;
-    }
+    .hero-banner { background: linear-gradient(180deg, #6a1b9a, #4a148c); color: white; text-align: center; padding: 60px 20px 40px; }
+    .hero-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin: 20px auto; display: block; }
     .hero-text h2 { font-size: 2rem; margin-bottom: 0.5rem; }
     .hero-text h1 { font-size: 2.8rem; font-weight: bold; margin-bottom: 1rem; }
     .hero-text p { font-size: 1.1rem; margin-bottom: 30px; color: #e0d4ff; }
-    .cta-button {
-      background: white; color: #4a148c;
-      padding: 12px 28px; border-radius: 30px;
-      font-weight: bold; text-decoration: none;
-      transition: 0.3s;
-    }
+    .cta-button { background: white; color: #4a148c; padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: 0.3s; }
     .cta-button:hover { background: #d1b3ff; color: #2c0047; }
-
-    section.card {
-      background-color: white; margin: 30px auto;
-      padding: 30px 20px; max-width: 800px;
-      border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-    }
-    section.card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 10px;
-    }
-
-    footer {
-      text-align: center; padding: 20px;
-      background: #6a1b9a; color: white;
-      font-size: 0.9rem; margin-top: 40px;
-    }
-
-    form {
-      display: flex; flex-direction: column; gap: 12px; margin-top: 20px;
-    }
-    form input, form textarea {
-      padding: 10px; font-size: 1rem;
-      border: 1px solid #ccc; border-radius: 5px;
-      width: 100%; box-sizing: border-box;
-    }
-    form button {
-      padding: 10px; font-size: 1rem;
-      border: none; background: #0078d4; color: white;
-      border-radius: 5px; cursor: pointer; font-weight: bold;
-      transition: background 0.3s;
-    }
-    form button:hover { background: #005fa3; }
+    section.card { background-color: white; margin: 30px auto; padding: 30px 20px; max-width: 800px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); }
+    section.card h2 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+    footer { text-align: center; padding: 20px; background: #6a1b9a; color: white; font-size: 0.9rem; margin-top: 40px; }
+    .input-group { margin-bottom: 15px; }
+    .input-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .input-group input, .input-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+    .glow-button { padding: 10px 20px; background: #6a1b9a; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    .glow-button:hover { background: #4a148c; }
+    .success-message { color: green; margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -132,7 +62,10 @@
   }
 
   function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('show');
+    const menu = document.getElementById('navLinks');
+    menu.classList.toggle('show');
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => link.addEventListener('click', () => menu.classList.remove('show')));
   }
 </script>
 
@@ -169,7 +102,9 @@
 
 <section class="card" id="about">
   <h2>About Me</h2>
-  <p>I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.</p>
+  <p>
+    I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.
+  </p>
 </section>
 
 <section class="card" id="experience">
@@ -177,10 +112,10 @@
   <h3>Capgemini – Data Analyst</h3>
   <p>June 2024 – Present | Mumbai, India</p>
   <ul>
-    <li>Designed and deployed multiple Power BI dashboards including Utilization Tracker.</li>
-    <li>Enabled tracking of bench status, billing hours, and productivity using DAX KPIs.</li>
-    <li>Automated data pipelines using PySpark, SQL, and Azure Data Factory.</li>
-    <li>Collaborated with managers to define KPIs and present insights.</li>
+    <li>Designed and deployed multiple Power BI dashboards, including a Utilization Tracker Dashboard to monitor project-level and resource-level utilization across teams.</li>
+    <li>Enabled leadership to track bench status, billing hours, and resource productivity using dynamic filters and DAX-based KPIs.</li>
+    <li>Automated data processing pipelines using PySpark, SQL, and Azure Data Factory, reducing manual effort by 40%.</li>
+    <li>Collaborated cross-functionally with delivery managers to define KPIs and present actionable insights to stakeholders.</li>
   </ul>
 </section>
 
@@ -213,27 +148,46 @@
   <h2>Projects</h2>
   <div class="project">
     <h3>Utilization Tracker Dashboard (Power BI)</h3>
-    <p>Built for leadership to monitor utilization across teams with filters and DAX KPIs.</p>
+    <p>Designed and deployed a Power BI dashboard to monitor team-level utilization metrics across departments. Incorporated KPI indicators, drill-through, and DAX measures for real-time insights.</p>
   </div>
   <div class="project">
-    <h3>Bank Customer Churn Prediction</h3>
-    <p>Used ML algorithms and Power BI for churn segmentation and strategy planning.</p>
+    <h3>Bank Customer Churn Rate Prediction</h3>
+    <p>Used machine learning techniques (Logistic Regression, Decision Trees) to predict customer churn. Visualized churn segments and retention strategies using Power BI and matplotlib.</p>
   </div>
   <div class="project">
-    <h3>Sales Performance Dashboard</h3>
-    <p>Interactive report with drilldown filters, KPIs, profitability & monthly sales view.</p>
+    <h3>Sales Performance Dashboard (Power BI)</h3>
+    <p>Built an interactive dashboard displaying monthly sales, top products, and regional performance. Enabled dynamic filtering, drill-down by product and geography, and profitability analysis.</p>
+  </div>
+  <div class="project">
+    <h3>NSS BIT SINDRI – Website</h3>
+    <p>Built with React.js, Firebase, and SQL.</p>
+    <p><a href="https://github.com/NSS-Sindri-Website/react"><i class="fab fa-github"></i></a></p>
+  </div>
+  <div class="project">
+    <h3>Third Eye Illusion Media – Website</h3>
+    <p>Built with Next.js, Firebase, and SQL.</p>
+    <p><a href="https://github.com/RAJ-RHR/Thirdeyeillusion"><i class="fab fa-github"></i></a></p>
   </div>
 </section>
 
-<section class="card" id="contact">
+<section class="card contact" id="contact">
   <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/xovwzgqq" method="POST" onsubmit="event.preventDefault(); submitForm(this);">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">🚀 Send Message</button>
+  <form class="contact-form" action="https://formspree.io/f/xovwzgqq" method="POST" onsubmit="event.preventDefault(); submitForm(this);">
+    <div class="input-group">
+      <label for="name">👤 Name</label>
+      <input type="text" name="name" id="name" placeholder="Your Name" required />
+    </div>
+    <div class="input-group">
+      <label for="email">📧 Email</label>
+      <input type="email" name="email" id="email" placeholder="you@example.com" required />
+    </div>
+    <div class="input-group">
+      <label for="message">💬 Message</label>
+      <textarea name="message" id="message" placeholder="Write your message here..." rows="5" required></textarea>
+    </div>
+    <button type="submit" class="glow-button">🚀 Send Message</button>
   </form>
-  <p id="success-message" style="display:none; color:green; margin-top:10px;">✅ Your message was sent successfully!</p>
+  <p id="success-message" class="success-message">✅ Your message was sent successfully!</p>
 </section>
 
 <footer>
