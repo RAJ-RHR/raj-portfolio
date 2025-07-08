@@ -4,15 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Hansh Raj | Data Analyst</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
 
+    .top-bar {
+      position: sticky; top: 0; z-index: 1001;
+      background: #6a1b9a; color: white;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 20px;
+    }
+    .top-bar a { color: white; text-decoration: none; margin-left: 5px; }
+    .icons i { margin-left: 15px; color: white; font-size: 1.2rem; }
+
+    .navbar {
+      position: sticky; top: 40px; z-index: 1000;
+      background-color: #6a1b9a; color: white;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 20px;
+    }
+    .navbar .logo { font-size: 1.5rem; font-weight: bold; }
+    .navbar ul {
+      list-style: none; display: flex; gap: 20px;
+    }
+    .navbar a {
+      color: white; text-decoration: none;
+      font-weight: 500; border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+    .navbar a:hover, .navbar a.active {
+      border-bottom: 2px solid white;
+    }
+    .menu-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.8rem; color: white; cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .navbar ul {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: #6a1b9a; flex-direction: column; align-items: flex-start;
+        padding: 20px; transform: translateY(-20px); opacity: 0; visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      .navbar ul.show {
+        transform: translateY(0); opacity: 1; visibility: visible;
+      }
+    }
+
+    .hero-banner {
+      background: linear-gradient(180deg, #6a1b9a, #4a148c);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .hero-img {
+      width: 140px; height: 140px; border-radius: 50%;
+      object-fit: cover; border: 4px solid white;
+      margin: 20px auto; display: block;
+    }
+    .hero-text h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .hero-text h1 { font-size: 2.8rem; font-weight: bold; margin-bottom: 1rem; }
+    .hero-text p { font-size: 1.1rem; margin-bottom: 30px; color: #e0d4ff; }
+    .cta-button {
+      background: white; color: #4a148c;
+      padding: 12px 28px; border-radius: 30px;
+      font-weight: bold; text-decoration: none;
+      transition: 0.3s;
+    }
+    .cta-button:hover { background: #d1b3ff; color: #2c0047; }
+
+    section.card {
+      background-color: white; margin: 30px auto;
+      padding: 30px 20px; max-width: 800px;
+      border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    }
+    section.card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+
+    footer {
+      text-align: center; padding: 20px;
+      background: #6a1b9a; color: white;
+      font-size: 0.9rem; margin-top: 40px;
+    }
+
+    form {
+      display: flex; flex-direction: column; gap: 12px; margin-top: 20px;
+    }
+    form input, form textarea {
+      padding: 10px; font-size: 1rem;
+      border: 1px solid #ccc; border-radius: 5px;
+      width: 100%; box-sizing: border-box;
+    }
+    form button {
+      padding: 10px; font-size: 1rem;
+      border: none; background: #0078d4; color: white;
+      border-radius: 5px; cursor: pointer; font-weight: bold;
+      transition: background 0.3s;
+    }
+    form button:hover { background: #005fa3; }
+  </style>
 </head>
 <body>
-    <script>
+<script>
   async function submitForm(form) {
     const formData = new FormData(form);
     try {
@@ -21,156 +124,120 @@
         body: formData,
         headers: { Accept: "application/json" },
       });
-
       form.reset();
       document.getElementById("success-message").style.display = "block";
     } catch (error) {
       alert("There was an error. Please try again.");
     }
   }
+
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
 </script>
-<header class="hero-banner" id="home">
-  <div class="top-bar">
-    <span>
-  <i class="fa-solid fa-envelope"></i>
-  <a href="mailto:rajhansraj2000@gmail.com">rajhansraj2000@gmail.com</a>
-</span>
 
-    <div class="icons">
-      <a href="https://github.com/RAJ-RHR" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/raj-hansh-raj-rhr" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
+<div class="top-bar">
+  <span><i class="fa-solid fa-envelope"></i> <a href="mailto:rajhansraj2000@gmail.com">rajhansraj2000@gmail.com</a></span>
+  <div class="icons">
+    <a href="https://github.com/RAJ-RHR" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/raj-hansh-raj-rhr" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
+</div>
 
-  <nav class="navbar">
-    <h1 class="logo">Portfolio.</h1>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <h1 class="logo">Portfolio.</h1>
+  <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
+<header class="hero-banner" id="home">
   <div class="hero-text">
     <h2>Hi!</h2>
     <img src="/rhr.jpeg" alt="Raj Hansh Raj" class="hero-img" />
     <h1>I'm Raj Hansh Raj!</h1>
-    <p><strong> Data & Analytics</strong>  | 1+ Years Experience</p>
+    <p><strong>Data & Analytics</strong> | 1+ Years Experience</p>
     <a href="#about" class="cta-button">Here's More!</a>
   </div>
 </header>
 
+<section class="card" id="about">
+  <h2>About Me</h2>
+  <p>I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.</p>
+</section>
 
+<section class="card" id="experience">
+  <h2>Experience</h2>
+  <h3>Capgemini – Data Analyst</h3>
+  <p>June 2024 – Present | Mumbai, India</p>
+  <ul>
+    <li>Designed and deployed multiple Power BI dashboards including Utilization Tracker.</li>
+    <li>Enabled tracking of bench status, billing hours, and productivity using DAX KPIs.</li>
+    <li>Automated data pipelines using PySpark, SQL, and Azure Data Factory.</li>
+    <li>Collaborated with managers to define KPIs and present insights.</li>
+  </ul>
+</section>
 
-  <section class="card" id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.
-    </p>
-  </section>
+<section class="card" id="education">
+  <h2>Education</h2>
+  <p><strong>B.Tech in Mining Engineering</strong><br>
+  Birsa Institute of Technology, Sindri<br>
+  Aug 2019 – Jun 2023 | Dhanbad, India<br>
+  CGPA: 8.6</p>
+</section>
 
-  <section class="card" id="experience">
-    <h2>Experience</h2>
-    <h3>Capgemini – Data Analyst</h3>
-    <p>June 2024 – Present | Mumbai, India</p>
-    <ul>
-      <li>Designed and deployed multiple Power BI dashboards, including a Utilization Tracker Dashboard to monitor project-level and resource-level utilization across teams.</li>
-      <li>Enabled leadership to track bench status, billing hours, and resource productivity using dynamic filters and DAX-based KPIs.</li>
-      <li>Automated data processing pipelines using PySpark, SQL, and Azure Data Factory, reducing manual effort by 40%.</li>
-      <li>Collaborated cross-functionally with delivery managers to define KPIs and present actionable insights to stakeholders.</li>
-    </ul>
-  </section>
+<section class="card" id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>Microsoft Fabric Data Analytics Associate</li>
+    <li>SQL (Basic) – HackerRank</li>
+    <li>NX Design – Basics</li>
+  </ul>
+</section>
 
-  <section class="card" id="education">
-    <h2>Education</h2>
-    <p><strong>B.Tech in Mining Engineering</strong><br>
-    Birsa Institute of Technology, Sindri<br>
-    Aug 2019 – Jun 2023 | Dhanbad, India<br>
-    CGPA: 8.6</p>
-  </section>
+<section class="card" id="skills">
+  <h2>Skills</h2>
+  <p><strong>Languages:</strong> Python, PySpark, HTML/CSS, PHP</p>
+  <p><strong>Database:</strong> SQL, Firebase, MongoDB, AWS</p>
+  <p><strong>Platforms:</strong> Microsoft Azure, AWS, Databricks</p>
+  <p><strong>Software:</strong> MS Fabric, Power BI, MS Excel</p>
+</section>
 
-  <section class="card" id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Microsoft Fabric Data Analytics Associate</li>
-      <li>SQL (Basic) – HackerRank</li>
-      <li>NX Design – Basics</li>
-    </ul>
-  </section>
-
-  <section class="card" id="skills">
-    <h2>Skills</h2>
-    <p><strong>Languages:</strong> Python, PySpark, HTML/CSS, PHP</p>
-    <p><strong>Database:</strong> SQL, Firebase, MongoDB, AWS</p>
-    <p><strong>Platforms:</strong> Microsoft Azure, AWS, Databricks</p>
-    <p><strong>Software:</strong> MS Fabric, Power BI, MS Excel</p>
-  </section>
-
-  <section class="card" id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Utilization Tracker Dashboard (Power BI)</h3>
-      <p>Designed and deployed a Power BI dashboard to monitor team-level utilization metrics across departments. Incorporated KPI indicators, drill-through, and DAX measures for real-time insights.</p>
-    </div>
-    <div class="project">
-      <h3>Bank Customer Churn Rate Prediction</h3>
-      <p>Used machine learning techniques (Logistic Regression, Decision Trees) to predict customer churn. Visualized churn segments and retention strategies using Power BI and matplotlib.</p>
-    </div>
-    <div class="project">
-      <h3>Sales Performance Dashboard (Power BI)</h3>
-      <p>Built an interactive dashboard displaying monthly sales, top products, and regional performance. Enabled dynamic filtering, drill-down by product and geography, and profitability analysis.</p>
-    </div>
-    <div class="project">
-      <h3>NSS BIT SINDRI – Website</h3>
-      <p>Built with React.js, Firebase, and SQL.</p>
-      <p><a href="https://github.com/NSS-Sindri-Website/react">GitHub</a></p>
-    </div>
-    <div class="project">
-      <h3>Third Eye Illusion Media – Website</h3>
-      <p>Built with Next.js, Firebase, and SQL.</p>
-      <p><a href="https://github.com/RAJ-RHR/Thirdeyeillusion">GitHub</a></p>
-    </div>
-  </section>
-
-  <section class="card contact" id="contact">
-   <h2>Contact Me</h2>
-<form
-  class="contact-form"
-  action="https://formspree.io/f/xovwzgqq"
-  method="POST"
-  onsubmit="event.preventDefault(); submitForm(this);"
->
-  <div class="input-group">
-    <label for="name">👤 Name</label>
-    <input type="text" name="name" id="name" placeholder="Your Name" required />
+<section class="card" id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Utilization Tracker Dashboard (Power BI)</h3>
+    <p>Built for leadership to monitor utilization across teams with filters and DAX KPIs.</p>
   </div>
-
-  <div class="input-group">
-    <label for="email">📧 Email</label>
-    <input type="email" name="email" id="email" placeholder="you@example.com" required />
+  <div class="project">
+    <h3>Bank Customer Churn Prediction</h3>
+    <p>Used ML algorithms and Power BI for churn segmentation and strategy planning.</p>
   </div>
-
-  <div class="input-group">
-    <label for="message">💬 Message</label>
-    <textarea name="message" id="message" placeholder="Write your message here..." rows="5" required></textarea>
+  <div class="project">
+    <h3>Sales Performance Dashboard</h3>
+    <p>Interactive report with drilldown filters, KPIs, profitability & monthly sales view.</p>
   </div>
+</section>
 
-  <button type="submit" class="glow-button">🚀 Send Message</button>
-</form>
+<section class="card" id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/xovwzgqq" method="POST" onsubmit="event.preventDefault(); submitForm(this);">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">🚀 Send Message</button>
+  </form>
+  <p id="success-message" style="display:none; color:green; margin-top:10px;">✅ Your message was sent successfully!</p>
+</section>
 
-<p id="success-message" class="success-message">✅ Your message was sent successfully!</p>
-
-
-  </section>
-
-  <footer>
-    <p>© 2025 Raj Hansh Raj</p>
-  </footer>
+<footer>
+  <p>© 2025 Raj Hansh Raj</p>
+</footer>
 </body>
 </html>
