@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 <body>
     <script>
@@ -27,25 +29,53 @@
     }
   }
 </script>
+<header class="hero-banner" id="home">
+  <div class="top-bar">
+    <span>
+  <i class="fa-solid fa-envelope"></i>
+  <a href="mailto:rajhansraj2000@gmail.com">rajhansraj2000@gmail.com</a>
+</span>
 
-  <header class="hero">
-    <img src="/IMG_3651_Original.jpeg" alt="Profile Photo" class="profile-img" />
-    <h1>Hi, I'm Raj Hansh Raj</h1>
-    <p>Data & Analytics | 1+ Years Experience</p>
-    <div class="cta-buttons">
-      <a href="https://drive.google.com/file/d/1gf8LfQMMTmqqnHuPXudaX_JfvdVfrhU1/view?usp=drive_link" class="btn">Download Resume</a>
-      <a href="https://linkedin.com/in/raj-hansh-raj-rhr" class="btn">LinkedIn</a>
+    <div class="icons">
+      <a href="https://github.com/RAJ-RHR" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/raj-hansh-raj-rhr" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
     </div>
-  </header>
+  </div>
 
-  <section class="card">
+  <nav class="navbar">
+    <h1 class="logo">Portfolio.</h1>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-text">
+    <h2>Hi!</h2>
+    <img src="/rhr.jpeg" alt="Raj Hansh Raj" class="hero-img" />
+    <h1>I'm Raj Hansh Raj!</h1>
+    <p><strong> Data & Analytics</strong>  | 1+ Years Experience</p>
+    <a href="#about" class="cta-button">Here's More!</a>
+  </div>
+</header>
+
+
+
+  <section class="card" id="about">
     <h2>About Me</h2>
     <p>
       I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.
     </p>
   </section>
 
-  <section class="card">
+  <section class="card" id="experience">
     <h2>Experience</h2>
     <h3>Capgemini – Data Analyst</h3>
     <p>June 2024 – Present | Mumbai, India</p>
@@ -57,7 +87,7 @@
     </ul>
   </section>
 
-  <section class="card">
+  <section class="card" id="education">
     <h2>Education</h2>
     <p><strong>B.Tech in Mining Engineering</strong><br>
     Birsa Institute of Technology, Sindri<br>
@@ -65,7 +95,7 @@
     CGPA: 8.6</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="certifications">
     <h2>Certifications</h2>
     <ul>
       <li>Microsoft Fabric Data Analytics Associate</li>
@@ -74,7 +104,7 @@
     </ul>
   </section>
 
-  <section class="card">
+  <section class="card" id="skills">
     <h2>Skills</h2>
     <p><strong>Languages:</strong> Python, PySpark, HTML/CSS, PHP</p>
     <p><strong>Database:</strong> SQL, Firebase, MongoDB, AWS</p>
@@ -82,7 +112,7 @@
     <p><strong>Software:</strong> MS Fabric, Power BI, MS Excel</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="projects">
     <h2>Projects</h2>
     <div class="project">
       <h3>Utilization Tracker Dashboard (Power BI)</h3>
@@ -108,7 +138,7 @@
     </div>
   </section>
 
-  <section class="card contact">
+  <section class="card contact" id="contact">
    <h2>Contact Me</h2>
 <form
   class="contact-form"
