@@ -5,70 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raj Hansh Raj | Data Analyst</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- Paste this inside <head> -->
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" type="image/svg+xml" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Raj Hansh Raj",
+  "jobTitle": "Data Analyst",
+  "url": "https://yourdomain.com",
+  "sameAs": [
+    "https://linkedin.com/in/raj-hansh-raj-rhr",
+    "https://github.com/RAJ-RHR"
+  ]
+}
+</script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
-    .top-bar { position: sticky; top: 0; z-index: 1001; background: #6a1b9a; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-    .top-bar a { color: white; text-decoration: none; margin-left: 5px; }
-    .icons i { margin-left: 15px; color: white; font-size: 1.2rem; }
-    .navbar { position: sticky; top: 40px; z-index: 1000; background-color: #6a1b9a; color: white; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-    .navbar .logo { font-size: 1.5rem; font-weight: bold; }
+    body { font-family: 'Roboto', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+    .top-bar, .navbar, footer { background: #6a1b9a; color: white; }
+    .top-bar, .navbar { position: sticky; z-index: 1000; padding: 10px 20px; }
+    .top-bar { top: 0; display: flex; justify-content: space-between; align-items: center; }
+    .navbar { top: 40px; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+    .top-bar a, .navbar a { color: white; text-decoration: none; }
+    .icons i, .navbar .logo { font-size: 1.2rem; margin-left: 15px; }
     .navbar ul { list-style: none; display: flex; gap: 20px; }
-    .navbar a { color: white; text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent; transition: 0.3s; }
+    .navbar a { font-weight: 500; border-bottom: 2px solid transparent; transition: 0.3s; }
     .navbar a:hover, .navbar a.active { border-bottom: 2px solid white; }
-    .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: white; cursor: pointer; }
+    .menu-toggle { display: none; font-size: 1.8rem; color: white; background: none; border: none; cursor: pointer; }
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
-      .navbar ul { position: absolute; top: 100%; left: 0; width: 100%; background: #6a1b9a; flex-direction: column; align-items: flex-start; padding: 20px; transform: translateY(-20px); opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-      .navbar ul.show { display: flex; transform: translateY(0); opacity: 1; visibility: visible; }
+      .navbar ul { position: absolute; top: 100%; left: 0; background: #6a1b9a; flex-direction: column; width: 100%; padding: 20px; opacity: 0; visibility: hidden; transform: translateY(-20px); transition: all 0.3s ease; }
+      .navbar ul.show { opacity: 1; visibility: visible; transform: translateY(0); }
     }
-    .hero-banner { background: linear-gradient(180deg, #6a1b9a, #4a148c); color: white; text-align: center; padding: 60px 20px 40px; }
-    .hero-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin: 20px auto; display: block; }
-    .hero-text h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .hero-text h1 { font-size: 2.8rem; font-weight: bold; margin-bottom: 1rem; }
-    .hero-text p { font-size: 1.1rem; margin-bottom: 30px; color: #e0d4ff; }
-    .cta-button { background: white; color: #4a148c; padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+    .hero-banner { background: linear-gradient(180deg, #6a1b9a, #4a148c); text-align: center; padding: 60px 20px; color: white; }
+    .hero-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin: 20px auto; }
+    .hero-text h1 { font-size: 2.8rem; font-weight: bold; margin: 1rem 0; }
+    .cta-button { background: white; color: #4a148c; padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; margin: 5px; display: inline-block; transition: 0.3s; }
     .cta-button:hover { background: #d1b3ff; color: #2c0047; }
-    section.card { background-color: white; margin: 30px auto; padding: 30px 20px; max-width: 800px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); }
-    section.card h2 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
-    footer { text-align: center; padding: 20px; background: #6a1b9a; color: white; font-size: 0.9rem; margin-top: 40px; }
-    .input-group { margin-bottom: 15px; }
-    .input-group label { display: block; font-weight: bold; margin-bottom: 5px; }
-    .input-group input, .input-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
-    .glow-button { padding: 10px 20px; background: #6a1b9a; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    .glow-button, .whatsapp-button { padding: 12px 24px; border-radius: 30px; font-weight: bold; cursor: pointer; display: inline-block; border: none; }
+    .glow-button { background: #6a1b9a; color: white; }
     .glow-button:hover { background: #4a148c; }
-    .success-message { color: green; margin-top: 10px; }
+    .whatsapp-button { background-color: #25D366; color: white; text-decoration: none; margin-top: 20px; }
+    .whatsapp-button i { margin-right: 8px; }
+    section.card { background: white; margin: 30px auto; padding: 30px 20px; max-width: 800px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); }
+    section.card h2 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+    .tech-logos { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding-top: 10px; }
+    .tech-logos img { height: 40px; object-fit: contain; }
+    .floating-wa { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 12px 18px; border-radius: 50px; text-decoration: none; font-size: 18px; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; }
   </style>
+  <style>
+  #loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #6a1b9a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  body.loaded #loader-wrapper {
+    display: none;
+  }
+</style>
+
 </head>
 <body>
+  <div id="loader-wrapper">
+  <div class="loader"></div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  AOS.init();
   async function submitForm(form) {
     const formData = new FormData(form);
     try {
-      await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
+      await fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } });
       form.reset();
       document.getElementById("success-message").style.display = "block";
-    } catch (error) {
-      alert("There was an error. Please try again.");
-    }
+    } catch { alert("There was an error. Please try again."); }
   }
-
   function toggleMenu() {
-    const menu = document.getElementById('navLinks');
-    menu.classList.toggle('show');
-    const links = menu.querySelectorAll('a');
-    links.forEach(link => link.addEventListener('click', () => menu.classList.remove('show')));
+    document.getElementById('navLinks').classList.toggle('show');
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('show');
   }
 </script>
-
 <div class="top-bar">
   <span><i class="fa-solid fa-envelope"></i> <a href="mailto:rajhansraj2000@gmail.com">rajhansraj2000@gmail.com</a></span>
   <div class="icons">
@@ -76,122 +122,114 @@
     <a href="https://linkedin.com/in/raj-hansh-raj-rhr" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
 </div>
-
 <nav class="navbar">
   <h1 class="logo">Portfolio.</h1>
   <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#home" class="active" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" onclick="closeMenu()">About</a></li>
+    <li><a href="#tech" onclick="closeMenu()">Tech Stack</a></li>
+    <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+    <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+    <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
 </nav>
-
 <header class="hero-banner" id="home">
-  <div class="hero-text">
+  <div class="hero-text" data-aos="fade-up">
     <h2>Hi!</h2>
     <img src="/rhr.jpeg" alt="Raj Hansh Raj" class="hero-img" />
     <h1>I'm Raj Hansh Raj!</h1>
-    <p><strong>Data & Analytics</strong> | 1+ Years Experience</p>
+    <p>💼 Data Analyst | Power BI Specialist | Azure Certified | Turning raw data into business stories</p>
     <a href="#about" class="cta-button">Here's More!</a>
+    <a href="https://drive.google.com/file/d/1gf8LfQMMTmqqnHuPXudaX_JfvdVfrhU1/view?usp=sharing" class="cta-button" download>📄 Download Resume</a>
   </div>
 </header>
-
-<section class="card" id="about">
+<section class="card" id="about" data-aos="fade-up">
   <h2>About Me</h2>
-  <p>
-    I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.
-  </p>
+  <p>I'm Raj Hansh Raj, a Data Analyst with 1+ years of experience in designing dashboards and data solutions. Currently working at Capgemini, I leverage tools like Power BI, PySpark, and SQL to drive business decisions. I hold a B.Tech in Mining Engineering from BIT Sindri and have certifications in Microsoft Fabric Analytics. Passionate about turning complex data into real business value.</p>
 </section>
+<section class="card" id="tech" data-aos="fade-up">
+  <h2>Tech Stack</h2>
+  <div class="tech-logos">
+    <img src="https://img.icons8.com/color/48/python.png" alt="Python" />
+   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" width="48" height="48" />
 
-<section class="card" id="experience">
+    <img src="https://img.icons8.com/color/48/sql.png" alt="SQL" />
+    <img src="https://img.icons8.com/color/48/azure-1.png" alt="Azure" />
+    <img src="https://img.icons8.com/color/48/php.png" alt="PHP" />
+    <img src="https://img.icons8.com/color/48/firebase.png" alt="Firebase" />
+  </div>
+</section>
+<section class="card" id="experience" data-aos="fade-up">
   <h2>Experience</h2>
   <h3>Capgemini – Data Analyst</h3>
   <p>June 2024 – Present | Mumbai, India</p>
   <ul>
-    <li>Designed and deployed multiple Power BI dashboards, including a Utilization Tracker Dashboard to monitor project-level and resource-level utilization across teams.</li>
-    <li>Enabled leadership to track bench status, billing hours, and resource productivity using dynamic filters and DAX-based KPIs.</li>
-    <li>Automated data processing pipelines using PySpark, SQL, and Azure Data Factory, reducing manual effort by 40%.</li>
-    <li>Collaborated cross-functionally with delivery managers to define KPIs and present actionable insights to stakeholders.</li>
+    <li>Designed and deployed multiple Power BI dashboards, including a Utilization Tracker Dashboard.</li>
+    <li>Enabled leadership to track bench status, billing hours, and productivity using DAX KPIs.</li>
+    <li>Automated data processing using PySpark, SQL, Azure Data Factory, reducing manual effort.</li>
+    <li>Collaborated with stakeholders to define KPIs and actionable insights.</li>
   </ul>
 </section>
-
-<section class="card" id="education">
-  <h2>Education</h2>
-  <p><strong>B.Tech in Mining Engineering</strong><br>
-  Birsa Institute of Technology, Sindri<br>
-  Aug 2019 – Jun 2023 | Dhanbad, India<br>
-  CGPA: 8.6</p>
-</section>
-
-<section class="card" id="certifications">
-  <h2>Certifications</h2>
+<section class="card" id="projects" data-aos="fade-up">
+  <h2>Projects</h2>
   <ul>
-    <li>Microsoft Fabric Data Analytics Associate</li>
-    <li>SQL (Basic) – HackerRank</li>
-    <li>NX Design – Basics</li>
+    <li><strong>Utilization Tracker Dashboard (Power BI)</strong><br>Monitors team metrics with DAX KPIs, drill-through, and dynamic filters.</li>
+    <li><strong>Bank Churn Prediction</strong><br>Built ML model with logistic regression, visualized using Power BI.</li>
+    <li><strong>Sales Dashboard</strong><br>Analyzed top products, profitability by region using dynamic Power BI visuals.</li>
+    <li><strong>NSS BIT Sindri Website</strong> – React, Firebase <a href="https://github.com/NSS-Sindri-Website/react" target="_blank"><i class="fab fa-github"></i></a></li>
+    <li><strong>Third Eye Illusion Media</strong> – Next.js, Firebase <a href="https://github.com/RAJ-RHR/Thirdeyeillusion" target="_blank"><i class="fab fa-github"></i></a></li>
   </ul>
 </section>
-
-<section class="card" id="skills">
+<section class="card" id="skills" data-aos="fade-up">
   <h2>Skills</h2>
   <p><strong>Languages:</strong> Python, PySpark, HTML/CSS, PHP</p>
-  <p><strong>Database:</strong> SQL, Firebase, MongoDB, AWS</p>
+  <p><strong>Databases:</strong> SQL, Firebase, MongoDB, AWS</p>
   <p><strong>Platforms:</strong> Microsoft Azure, AWS, Databricks</p>
-  <p><strong>Software:</strong> MS Fabric, Power BI, MS Excel</p>
+  <p><strong>Tools:</strong> MS Fabric, Power BI, Excel</p>
 </section>
-
-<section class="card" id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>Utilization Tracker Dashboard (Power BI)</h3>
-    <p>Designed and deployed a Power BI dashboard to monitor team-level utilization metrics across departments. Incorporated KPI indicators, drill-through, and DAX measures for real-time insights.</p>
-  </div>
-  <div class="project">
-    <h3>Bank Customer Churn Rate Prediction</h3>
-    <p>Used machine learning techniques (Logistic Regression, Decision Trees) to predict customer churn. Visualized churn segments and retention strategies using Power BI and matplotlib.</p>
-  </div>
-  <div class="project">
-    <h3>Sales Performance Dashboard (Power BI)</h3>
-    <p>Built an interactive dashboard displaying monthly sales, top products, and regional performance. Enabled dynamic filtering, drill-down by product and geography, and profitability analysis.</p>
-  </div>
-  <div class="project">
-    <h3>NSS BIT SINDRI – Website</h3>
-    <p>Built with React.js, Firebase, and SQL.</p>
-    <p><a href="https://github.com/NSS-Sindri-Website/react"><i class="fab fa-github"></i></a></p>
-  </div>
-  <div class="project">
-    <h3>Third Eye Illusion Media – Website</h3>
-    <p>Built with Next.js, Firebase, and SQL.</p>
-    <p><a href="https://github.com/RAJ-RHR/Thirdeyeillusion"><i class="fab fa-github"></i></a></p>
-  </div>
-</section>
-
-<section class="card contact" id="contact">
+<section class="card contact" id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
+  <p>📬 Available for freelance, collaborations, and full-time roles.</p>
   <form class="contact-form" action="https://formspree.io/f/xovwzgqq" method="POST" onsubmit="event.preventDefault(); submitForm(this);">
-    <div class="input-group">
-      <label for="name">👤 Name</label>
-      <input type="text" name="name" id="name" placeholder="Your Name" required />
-    </div>
-    <div class="input-group">
-      <label for="email">📧 Email</label>
-      <input type="email" name="email" id="email" placeholder="you@example.com" required />
-    </div>
-    <div class="input-group">
-      <label for="message">💬 Message</label>
-      <textarea name="message" id="message" placeholder="Write your message here..." rows="5" required></textarea>
-    </div>
+    <div class="input-group"><label for="name">👤 Name</label><input type="text" name="name" id="name" required /></div>
+    <div class="input-group"><label for="email">📧 Email</label><input type="email" name="email" id="email" required /></div>
+    <div class="input-group"><label for="message">💬 Message</label><textarea name="message" id="message" rows="5" required></textarea></div>
     <button type="submit" class="glow-button">🚀 Send Message</button>
   </form>
   <p id="success-message" class="success-message">✅ Your message was sent successfully!</p>
+  <!-- <a href="https://wa.me/+916205385629" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a> -->
 </section>
-
+<a href="https://wa.me/+916205385629" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <footer>
   <p>© 2025 Raj Hansh Raj</p>
 </footer>
+<script>
+  // ScrollSpy Highlight
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let current = '';
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+<script>
+  window.addEventListener("load", function () {
+    document.body.classList.add("loaded");
+  });
+</script>
+
 </body>
 </html>
