@@ -169,16 +169,20 @@ section.card ul {
 }
 
 /* Icons */
-.icons i,
+
 .fa-eye {
-  color: white;
   font-size: 0.8rem;
-  margin-left: 2px;
+  color: white;
+  margin-left: 4px;
+  vertical-align: middle;
   transition: color 0.2s;
 }
+
+/* .icons i,
+
 .icons i:hover {
  color: #ffa726;
-}
+} */
 
   
 
@@ -343,3 +347,26 @@ footer {
     .floating-wa { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 12px 18px; border-radius: 50px; text-decoration: none; font-size: 18px; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
     
    
+.top-bar {
+  display: flex;
+  justify-content: center; /* centers content horizontally */
+  align-items: center;
+  padding: 1rem 0;
+ /* dark background */
+}
+
+.top-bar .icons {
+  display: flex;
+  gap: 1rem; /* space between icons */
+}
+
+.top-bar .icons a {
+  color: white;
+    font-size: 1.8rem;
+  transition: transform 0.2s ease;
+}
+
+.top-bar .icons a:hover {
+  transform: scale(1.2);
+ 
+}
