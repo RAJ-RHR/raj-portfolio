@@ -18,7 +18,7 @@
   "@type": "Person",
   "name": "Raj Hansh Raj",
   "jobTitle": "Data Analyst",
-  "url": "https://yourdomain.com",
+  "url": "https://rhr-portfolio.vercel.app/",
   "sameAs": [
     "https://linkedin.com/in/raj-hansh-raj-rhr",
     "https://github.com/RAJ-RHR"
@@ -248,33 +248,196 @@
 
 <section class="card" id="certifications" data-aos="fade-up">
   <h2>Certifications</h2>
-  <ul style="list-style: disc; padding-left: 20px;">
-    <li>
-      Microsoft Fabric Data Analytics Associate 
-      <a href="https://learn.microsoft.com/en-us/users/rajhanshraj-8391/credentials/bedde19931bc33f1?ref=https%3A%2F%2Fwww.google.com%2F" target="_blank" rel="noopener" style="color: black; text-decoration: none; margin-left: 6px;">
-        <i class="fa-solid fa-eye"></i>
-      </a>
-    </li>
-    <li>
-      SQL (Basic) – HackerRank
-      <a href="https://www.hackerrank.com/certificates/d46f76a368e7" target="_blank" rel="noopener" style="color: black; text-decoration: none; margin-left: 6px;">
-        <i class="fa-solid fa-eye"></i>
-      </a>
-    </li>
-    <li>
-      NX Design – Basics
-      <a href="https://drive.google.com/file/d/17uVFwubHFD0X4wXTNELNK1O3lL_YFGzP/view" target="_blank" rel="noopener" style="color: black; text-decoration: none; margin-left: 6px;">
-        <i class="fa-solid fa-eye"></i>
-      </a>
-    </li>
-    <li>
-      ISTQB CTFL Certified
-      <a href="https://www.istqb.org/certifications/certified-tester-foundation-level" target="_blank" rel="noopener" style="color: black; text-decoration: none; margin-left: 6px;">
-        <i class="fa-solid fa-eye"></i>
-      </a>
-    </li>
-  </ul>
+  <div class="cert-grid">
+    <!-- Microsoft -->
+    <div class="cert-item" onclick="openModal('microsoft')">
+      <img src="/certs/microsoft-f.svg" alt="Microsoft Certified Associate" loading="lazy" />
+      <p>Microsoft Certified Associate</p>
+    </div>
+
+    <!-- HackerRank -->
+    <div class="cert-item" onclick="openModal('hackerrank')">
+      <img src="/certs/hi-badge.jpg" alt="HackerRank SQL" loading="lazy" />
+      <p>SQL (Basic) – HackerRank</p>
+    </div>
+
+    <!-- Siemens NX -->
+    <div class="cert-item" onclick="openModal('siemens')">
+      <img src="/certs/siemens.svg" alt="NX Design Siemens" loading="lazy" />
+      <p>NX Design – Siemens</p>
+    </div>
+
+    <!-- ISTQB -->
+    <div class="cert-item" onclick="openModal('istqb')">
+      <img src="/certs/istqb.png" alt="ISTQB Certified Tester" loading="lazy" />
+      <p>ISTQB CTFL Certified</p>
+    </div>
+  </div>
 </section>
+
+<!-- Modal -->
+<div id="certModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <p id="modalText"></p>
+    <iframe id="modalPDF" style="display: none;" frameborder="0" width="100%" height="400px"></iframe>
+    <img id="modalImage" style="display: none; max-width: 100%; height: auto;" />
+    <a id="modalLink" href="#" target="_blank" style="display: inline-block; margin-top: 10px;">Visit</a>
+  </div>
+</div>
+
+<style>
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.cert-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cert-item img {
+  max-width: 100px;
+  border-radius: 8px;
+}
+
+.cert-item:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modal-content a {
+  background: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function openModal(cert) {
+  const modal = document.getElementById("certModal");
+  const modalText = document.getElementById("modalText");
+  const modalPDF = document.getElementById("modalPDF");
+  const modalImage = document.getElementById("modalImage");
+  const modalLink = document.getElementById("modalLink");
+
+  const data = {
+     microsoft: {
+    title: "Microsoft Certified Associate",
+    type: "pdf",
+    src: "https://drive.google.com/file/d/1VNGZy1zjtAW414N-EImC10Wtzgyhwd-L/preview",
+    link: "https://learn.microsoft.com/en-us/users/rajhanshraj-8391/credentials/bedde19931bc33f1"
+  },
+  hackerrank: {
+    title: "SQL (Basic) – HackerRank",
+    type: "pdf",
+    src: "https://drive.google.com/file/d/13mrVWynNxirGnKCVWSruruHv-77oHTvj/preview",
+    link: "https://www.hackerrank.com/certificates/d46f76a368e7"
+  },
+    siemens: {
+      title: "NX Design – Siemens",
+      type: "pdf",
+      src: "https://drive.google.com/file/d/17uVFwubHFD0X4wXTNELNK1O3lL_YFGzP/preview",
+      link: "https://drive.google.com/file/d/17uVFwubHFD0X4wXTNELNK1O3lL_YFGzP/view"
+    },
+    istqb: {
+      title: "ISTQB CTFL Certified",
+      type: "image",
+      src: "/preview/istqb.png",
+      link: "https://www.istqb.org/certifications/certified-tester-foundation-level"
+    }
+  };
+
+  const certData = data[cert];
+  modalText.textContent = certData.title;
+  modalLink.href = certData.link;
+
+  if (certData.type === "pdf") {
+    modalPDF.src = certData.src;
+    modalPDF.style.display = "block";
+    modalImage.style.display = "none";
+  } else {
+    modalImage.src = certData.src;
+    modalImage.style.display = "block";
+    modalPDF.style.display = "none";
+  }
+
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  const modal = document.getElementById("certModal");
+  modal.style.display = "none";
+  document.getElementById("modalPDF").src = "";
+  document.getElementById("modalImage").src = "";
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeModal();
+});
+</script>
+
+
 
 <section class="card" id="skills" data-aos="fade-up">
   <h2>Skills</h2>
