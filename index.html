@@ -166,17 +166,75 @@ I focus on solving business problems — delivering reliable data platforms that
 
   <div class="tech-grid">
     <img src="https://img.icons8.com/color/48/python.png" alt="Python" title="Python" />
-    <img src="https://img.icons8.com/color/48/javascript.png" alt="JavaScript" title="JavaScript" />
-    <img src="https://img.icons8.com/color/48/php.png" alt="PHP" title="PHP" />
+    
     <img src="https://img.icons8.com/color/48/sql.png" alt="SQL" title="SQL" />
-    <img src="https://img.icons8.com/office/48/react.png" alt="React.js" title="React.js" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js" title="Next.js" style="width: 48px; height: 48px;" />
+
     <img src="https://img.icons8.com/color/48/azure-1.png" alt="Microsoft Azure" title="Microsoft Azure" />
-    <img src="https://img.icons8.com/color/48/firebase.png" alt="Firebase" title="Firebase" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" title="Power BI" style="width: 48px; height: 48px;" />
-    <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png" alt="Microsoft Excel" title="Microsoft Excel (Advanced)" />
-    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" title="Git" style="width: 48px; height: 48px;" />
-  </div>
+
+    <!-- PySpark -->
+    <img src="https://spark.apache.org/images/spark-logo-trademark.png"
+         alt="PySpark"
+         title="PySpark"
+         style="width:48px;height:48px;object-fit:contain;" />
+
+    <!-- Azure Data Factory -->
+    <img src="https://img.icons8.com/color/48/data-configuration.png"
+         alt="Azure Data Factory"
+         title="Azure Data Factory" />
+
+    <!-- Azure Synapse -->
+    <img src="https://img.icons8.com/color/48/database.png"
+         alt="Azure Synapse Analytics"
+         title="Azure Synapse Analytics" />
+
+    <!-- Databricks -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png"
+         alt="Databricks"
+         title="Databricks"
+         style="width:48px;height:48px;object-fit:contain;" />
+
+    <!-- Snowflake -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
+         alt="Snowflake"
+         title="Snowflake"
+         style="width:48px;height:48px;object-fit:contain;" />
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+         alt="Power BI"
+         title="Power BI"
+         style="width:48px;height:48px;" />
+
+    <img src="https://img.icons8.com/color/48/microsoft-excel-2019--v1.png"
+         alt="Microsoft Excel"
+         title="Microsoft Excel (Advanced)" />
+
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+         alt="GitHub"
+         title="Git"
+         style="width:48px;height:48px;" />
+
+    <img src="https://img.icons8.com/color/48/firebase.png"
+         alt="Firebase"
+         title="Firebase" />
+
+    <img src="https://img.icons8.com/color/48/php.png"
+         alt="PHP"
+         title="PHP" />
+
+    <!-- Last -->
+    <img src="https://img.icons8.com/color/48/javascript.png"
+         alt="JavaScript"
+         title="JavaScript" />
+
+    <img src="https://img.icons8.com/office/48/react.png"
+         alt="React.js"
+         title="React.js" />
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg"
+         alt="Next.js"
+         title="Next.js"
+         style="width:48px;height:48px;" />
+</div>
 </section>
 
 <style>
@@ -286,10 +344,13 @@ Built interactive dashboard analyzing product performance and regional profitabi
   <div class="cert-grid">
     <!-- Microsoft -->
     <div class="cert-item" onclick="openModal('microsoft')">
-      <img src="/certs/microsoft-f.svg" alt="Microsoft Certified Associate" loading="lazy" />
-      <p>Microsoft Certified Associate</p>
+      <img src="/certs/microsoft-f.svg" alt=" DP-600" loading="lazy" />
+      <p>Fabric Analytics Engineer Associate</p>
     </div>
-
+ <div class="cert-item" onclick="openModal('microsoft')">
+      <img src="/certs/DP900.svg" alt="DP-900" loading="lazy" />
+      <p>Azure Data Fundamentals</p>
+    </div>
     <!-- HackerRank -->
     <div class="cert-item" onclick="openModal('hackerrank')">
       <img src="/certs/hi-badge.png" alt="HackerRank SQL" loading="lazy" />
@@ -418,11 +479,18 @@ function openModal(cert) {
 
   const data = {
      microsoft: {
-    title: "Microsoft Certified Associate",
+    title: "Microsoft Certified: Fabric Analytics Engineer Associate ",
     type: "pdf",
     src: "https://drive.google.com/file/d/1VNGZy1zjtAW414N-EImC10Wtzgyhwd-L/preview",
     link: "https://learn.microsoft.com/en-us/users/rajhanshraj-8391/credentials/bedde19931bc33f1"
   },
+  microsoft: {
+    title: "Microsoft Certified: Azure Data Fundamentals",
+    type: "pdf",
+    src: "https://drive.google.com/file/d/1VNGZy1zjtAW414N-EImC10Wtzgyhwd-L/preview",
+    link: "https://learn.microsoft.com/en-us/users/rajhanshraj-8391/credentials/d9b85af50f6c1f65"
+  },
+  
   hackerrank: {
     title: "SQL (Basic) – HackerRank",
     type: "pdf",
@@ -500,45 +568,48 @@ document.addEventListener("keydown", function (e) {
     <span class="skill-tag">NumPy</span>
     <span class="skill-tag">scikit-learn</span>
   </div>
-
-  <div class="skill-category">
+<div class="skill-category">
     <h3>Databases</h3>
-    <span class="skill-tag">SQL</span>
+    <span class="skill-tag">SQL Server</span>
+    <span class="skill-tag">MySQL</span>
+    <span class="skill-tag">MongoDB</span>
     <span class="skill-tag">Firebase</span>
-    
+</div>
 
-    <span class="skill-tag">AWS</span>
-  </div>
-
-  <div class="skill-category">
+<div class="skill-category">
     <h3>Platforms</h3>
     <span class="skill-tag">Microsoft Azure</span>
     <span class="skill-tag">AWS</span>
+    <span class="skill-tag">Microsoft Fabric</span>
+</div>
 
-  </div>
-
-  <div class="skill-category">
+<div class="skill-category">
     <h3>Tools</h3>
+    <span class="skill-tag">Azure Data Factory</span>
+    <span class="skill-tag">Azure Databricks</span>
+    <span class="skill-tag">Azure Synapse</span>
+    <span class="skill-tag">Snowflake</span>
+    <span class="skill-tag">Power BI</span>
+    <span class="skill-tag">Microsoft Copilot</span>
     <span class="skill-tag">Git</span>
     <span class="skill-tag">GitHub</span>
     <span class="skill-tag">VS Code</span>
     <span class="skill-tag">Jupyter Notebook</span>
-    <span class="skill-tag">MS Fabric</span>
-    <span class="skill-tag">Power BI</span>
     <span class="skill-tag">Excel</span>
-  </div>
+</div>
 
-  <div class="skill-category">
-    <h3>Data & Web</h3>
+<div class="skill-category">
+    <h3>Data & Analytics</h3>
+    <span class="skill-tag">PySpark</span>
+    <span class="skill-tag">Pandas</span>
+    <span class="skill-tag">NumPy</span>
+    <span class="skill-tag">PyTorch</span>
     <span class="skill-tag">Matplotlib</span>
     <span class="skill-tag">Seaborn</span>
-    
-
-    <span class="skill-tag">Tailwind CSS</span>
-    <span class="skill-tag">Bootstrap</span>
-    <span class="skill-tag">HTML</span>
-    <span class="skill-tag">CSS</span>
-  </div>
+    <span class="skill-tag">Data Modeling</span>
+    <span class="skill-tag">ETL</span>
+    <span class="skill-tag">Data Warehousing</span>
+</div>
 </section>
 
 <section class="card contact" id="contact" data-aos="fade-up">
