@@ -150,10 +150,43 @@
   <h2>
   <i class="fa-solid fa-user" style="color: #ffb347; margin-right: 8px;"></i>
   About Me
-</h2>
+</h2> 
 <p>
-I'm Raj Hansh Raj, a Data Engineer with 2.5 + years of experience building scalable ETL pipelines and analytics solutions. At Capgemini, I specialize in PySpark, Azure Data Factory, Databricks, Synapse Analytics, SQL Server, and Power BI, developing metadata-driven and parameterized data pipelines. I have experience implementing Medallion Architecture (Bronze–Silver–Gold), incremental loading frameworks, data quality validations, and enterprise data warehousing solutions that enable reliable, analytics-ready data for business decision-making.
+  I'm Raj Hansh Raj, a Data Engineer with
+  <span id="experience-years"></span> of experience building
+  scalable ETL pipelines and analytics solutions. At Capgemini,
+  I specialize in PySpark, Azure Data Factory, Databricks,
+  Synapse Analytics, SQL Server, and Power BI, developing
+  metadata-driven and parameterized data pipelines. I have
+  experience implementing Medallion Architecture
+  (Bronze–Silver–Gold), incremental loading frameworks,
+  data quality validations, and enterprise data warehousing
+  solutions that enable reliable, analytics-ready data
+  for business decision-making.
 </p>
+
+<script>
+  function updateExperience() {
+    const startDate = new Date(2024, 5, 1); // June 1, 2024
+    const today = new Date();
+
+    let totalMonths =
+      (today.getFullYear() - startDate.getFullYear()) * 12 +
+      (today.getMonth() - startDate.getMonth());
+
+    if (today.getDate() < startDate.getDate()) {
+      totalMonths--;
+    }
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    document.getElementById("experience-years").textContent =
+      `${years} years and ${months} months`;
+  }
+
+  updateExperience();
+</script>
 </section>
 <section class="card" id="tech" data-aos="fade-up">
  <h2>
